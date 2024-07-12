@@ -1,28 +1,28 @@
 name: Medical_Expenses
 
-on:
+on: 
     push:
         branches: ["main"]
-    pull_requst:
+    pull_request:
         branches: ["main"]
 
-permission:
+permissions:
     contents: read
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: unbuntu-latest
 
         steps:
             - uses: actions/checkout@v3
-
             - name: Set Up Python 3.12
               uses: actions/checkout@v3
               with:
                 python-version: "3.12"
 
-            - name: InstallbDependencies
-              run:
+            - name : Install Dependencies
+              run: |
                 python -m pip install --upgrade pip
-                pip install flake8 pytest 
-                if [ -f requirements.txt ]; then pip install -r requirements.txt ; fi
+                pip install flake8 pytest
+                if [ -f requirements.txt ]; then pip intsall -r requirements.txt; fi
+                
