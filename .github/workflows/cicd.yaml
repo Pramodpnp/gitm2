@@ -32,3 +32,6 @@ jobs:
                 docker tag medical pramodcr2mca/medical:latest
                 docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
                 docker push pramodcr2mca/medical:latest
+
+              env:
+                DOCKER_CLI_ACI: 1
